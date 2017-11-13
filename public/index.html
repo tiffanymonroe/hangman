@@ -43,7 +43,9 @@
 
         <br>
           <h5>{{ctrl.word}}</h5>
-          <button type="button" name="button" ng-click="ctrl.getWord();">Get Word</button>
+          <p>The letters are </p>
+          <h5 ng-repeat="letter in ctrl.letters">{{letter}}</h5>
+          <button class="btn btn-default" type="button" name="button" ng-click="ctrl.getWord();">Get Word</button>
         <br>
         <br>
         </div>

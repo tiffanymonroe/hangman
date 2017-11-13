@@ -4,7 +4,8 @@ app.controller('GameController', ['$http', function($http){
   const controller = this;
   // this.letter = document.getElementById('alphabet');
   // console.log('letter is: ' + this.letter);
-  this.words = [];
+  this.word = '';
+  this.letters = [];
   this.alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','t','u','v','w','x','y','z'];
 
   this.game = {
@@ -41,7 +42,10 @@ app.controller('GameController', ['$http', function($http){
           }).then(
             function(res){
               controller.word = res.data.word;
-              controller.words.push(controller.word);
+              const array = controller.word.split('');
+              controller.letters.push(array);
+              console.log(this.letters);
+
             },
             function(err){
               console.log('getWord error is: ', err);
