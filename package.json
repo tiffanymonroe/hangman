@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/tiffanymonroe/hangman/issues"
   },
-  "homepage": "https://github.com/tiffanymonroe/hangman#readme"
+  "homepage": "https://github.com/tiffanymonroe/hangman#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mongoose": "^4.13.1"
+  }
 }
