@@ -39,20 +39,21 @@
         <h1 id="title">Hangman</h1>
         <img class="img-responsive" src="https://s3.amazonaws.com/gs-geo-images/2398901e-1f97-42ff-887a-df6bd57ce9fe_l.jpg">
         <br>
-        <p>Remaining Guesses: {{ctrl.game.guesses}}</p>
+        <h4>Remaining Guesses: {{ctrl.game.guesses}}</h4>
 
         <br>
           <h5>{{ctrl.word}}</h5>
           <button type="button" name="button" ng-click="ctrl.getWord();">Get Word</button>
         <br>
+        <br>
         </div>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <h4>Make a guess!</h4>
-          <h3><button class="btn btn-danger" id='alphabet' ng-click="ctrl.chooseLetter(alphabet);" ng-repeat="alphabet in ctrl.alphabet">{{alphabet}}</button></h3>
+          <center><h4>Make a guess!</h4></center>
+          <h3><button class="btn btn-danger" id='alphabet' ng-click="ctrl.chooseLetter(alphabet);"  ng-repeat="alphabet in ctrl.alphabet">{{alphabet}}</button></h3>
           <br>
           <h4>Guessed Letters</h4>
-          <h3><button class="btn btn-danger" id='alphabet' ng-repeat="alphabet in ctrl.game.guessedLetters">{{alphabet}}</button></h3>
+          <h3><button class="btn btn-warning" id='guess' ng-repeat="alphabet in ctrl.game.guessedLetters">{{alphabet}}</button></h3>
         </div>
       </div>
     </div>

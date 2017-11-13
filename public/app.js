@@ -2,9 +2,9 @@ const app = angular.module('HangmanGame', []);
 
 app.controller('GameController', ['$http', function($http){
   const controller = this;
-
+  // this.letter = document.getElementById('alphabet');
+  // console.log('letter is: ' + this.letter);
   this.words = [];
-  this.letter = '';
   this.alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','t','u','v','w','x','y','z'];
 
   this.game = {
@@ -17,16 +17,20 @@ app.controller('GameController', ['$http', function($http){
     }
   };
 
-  this.toggleLetter = function(letter){
-    this.alphabet.splice(letter);
-    console.log(this.alphabet);
-  }
 
 
   this.chooseLetter = function(letter){
     this.game.guesses = this.game.guesses - 1;
     this.game.guessedLetters.push(letter);
+
+    for (let i = 0; i < this.alphabet.length; i++){
+      if(letter === this.alphabet[i]){
+        alphabet[i].setAttribute("style", "display:none;")
+      }
+    }
+
     console.log('guessed letters are: ' + this.game.guessedLetters);
+
   }
 
 
