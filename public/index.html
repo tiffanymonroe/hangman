@@ -48,7 +48,11 @@
         </div>
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <h3><button class="btn btn-danger" id='alphabet' ng-click="ctrl.game.guesses = ctrl.game.guesses - 1" ng-repeat="alphabet in ctrl.alphabet">{{alphabet}}</button></h3>
+          <h4>Make a guess!</h4>
+          <h3><button class="btn btn-danger" id='alphabet' ng-click="ctrl.chooseLetter(alphabet);" ng-repeat="alphabet in ctrl.alphabet">{{alphabet}}</button></h3>
+          <br>
+          <h4>Guessed Letters</h4>
+          <h3><button class="btn btn-danger" id='alphabet' ng-repeat="alphabet in ctrl.game.guessedLetters">{{alphabet}}</button></h3>
         </div>
       </div>
     </div>

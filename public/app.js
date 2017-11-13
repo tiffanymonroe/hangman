@@ -17,9 +17,16 @@ app.controller('GameController', ['$http', function($http){
     }
   };
 
+  this.toggleLetter = function(letter){
+    this.alphabet.splice(letter);
+    console.log(this.alphabet);
+  }
 
-  this.chooseLetter = function(){
 
+  this.chooseLetter = function(letter){
+    this.game.guesses = this.game.guesses - 1;
+    this.game.guessedLetters.push(letter);
+    console.log('guessed letters are: ' + this.game.guessedLetters);
   }
 
 
