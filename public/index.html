@@ -33,7 +33,7 @@
     <title>Hangman</title>
   </head>
   <body ng-controller="GameController as ctrl">
-    <div id="container">
+    <div class="container">
       <div class="row">
         <div class="col-xs-6 col-xs-offset-3">
         <h1 id="title">Hangman</h1>
@@ -50,12 +50,17 @@
         <br>
         </div>
       <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
+        <div class="col-xs-6">
           <center><h4>Make a guess!</h4></center>
           <h3><button class="btn btn-danger" id='alphabet' ng-click="ctrl.chooseLetter(alphabet);"  ng-repeat="alphabet in ctrl.alphabet">{{alphabet}}</button></h3>
           <br>
-          <h4>Guessed Letters</h4>
+        </div>
+        <div class="col-xs-6">
+          <center><h4>Guessed Letters</h4></center>
           <h3><button class="btn btn-warning" id='guess' ng-repeat="alphabet in ctrl.game.guessedLetters">{{alphabet}}</button></h3>
+          <br>
+          <br>
+        </div>
         </div>
       </div>
     </div>

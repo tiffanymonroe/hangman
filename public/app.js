@@ -26,11 +26,12 @@ app.controller('GameController', ['$http', function($http){
 
     for (let i = 0; i < this.alphabet.length; i++){
       if(letter === this.alphabet[i]){
-        alphabet[i].setAttribute("style", "display:none;")
+        alphabet[i].setAttribute("style", "display:none;");
+        //replace - with letter
       }
     }
 
-    console.log('guessed letters are: ' + this.game.guessedLetters);
+
 
   }
 
@@ -41,7 +42,14 @@ app.controller('GameController', ['$http', function($http){
             url: 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&excludePartOfSpeech=abbreviation&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=2&maxLength=7&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'
           }).then(
             function(res){
+              //get random word
               controller.word = res.data.word;
+              controller.word.setAttribute("style", "display: ")
+
+              //change letters to _
+              
+
+              //push letters into array to check against guessed guessedLetters
               const array = controller.word.split('');
               controller.letters.push(array);
               console.log(this.letters);
